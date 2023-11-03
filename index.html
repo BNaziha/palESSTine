@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form</title>
+    <style>
+        .why-boycott h2 {
+            font-size: 30px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .why-boycott p {
+            font-size: 18px;
+            color: #316219;
+            margin-top: 15px;
+        }
+
+        .why-list {
+            margin-top: 20px;
+        }
+
+        .why-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+       
+        .why-item p {
+            font-size: 18px;
+            color: #0a1505;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: url('567.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: rgba(234, 234, 234, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+            padding: 5px;
+            margin: 170px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        input, select {
+            background-color: #d7d5d5;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #b7b5b5;
+            border-radius: 5px;
+            width: 250px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff0000c4;
+        }
+
+     
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter the brand name:</h1>
+        <input type="text" id="mark" placeholder="Brand name">
+
+        <h1>Choose your country:</h1>
+        <select id="country">
+            <option value="Country 1">Country 1</option>
+            <option value="Country 2">Country 2</option>
+            <option value="Country 3">Country 3</option>
+        </select>
+        <br>
+        <button id="okButton">OK</button>
+
+
+        <div class="why-boycott" data-aos="fade-up" data-aos-delay="200">
+            <h2>Why Boycott is Important</h2>
+            <div class="why-list">
+                <div class="why-item">
+                    <div class="why-caret-container"></div>
+                    <p>You express your dissatisfaction with unethical business practices.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-caret-container"></div>
+                    <p>You encourage companies to adopt responsible behaviors.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-caret-container"></div>
+                    <p>You support important social and environmental causes.</p>
+                </div>
+            </div>
+        </div>
+   
+    </div>
+</body>
+</html>
