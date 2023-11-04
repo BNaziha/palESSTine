@@ -12,8 +12,8 @@
     <div class="container">
         <h1>Enter the brand name:</h1>
 
-        <form action="./pages/respone.php" method="get"></form>
-        <input type="text" id="mark" placeholder="Brand name">
+        <form action="./pages/respone.php" method="get">
+        <input type="text" id="mark" placeholder="Brand name" name="mark">
 
         <h1>Choose your country:</h1>
         <select id="country">
@@ -26,7 +26,8 @@
             ?>
         </select>
         <br>
-        <button id="okButton">OK</button>
+        <button type="submit" id="okButton">OK</button>
+        </form>
 
 
         <div class="why-boycott" data-aos="fade-up" data-aos-delay="200">

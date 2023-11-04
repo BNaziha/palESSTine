@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Products with Israel</title>
+    <title>Results</title>
     <link rel="stylesheet" href="../styles/yes-no-style.css">
     <?php include_once("../scripts/database.php"); ?>
 </head>
@@ -11,11 +11,13 @@
     <div class="container">
         <?php
         $mark = $_GET["mark"];
-        $sql = "SELECT * FROM products WHERE mark = '$mark'";
+        $sql = "SELECT * FROM brand WHERE brand_name = '$mark'";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
+        // print_r($row);
         $name = $row["brand_name"];
         $isSafe = $row["is_safe"];
+        $field = $row["field"];
         ?>
 
         <?php
@@ -25,7 +27,7 @@
             <p>You can replace it with the following products:</p>
             <ul>
                 <?php
-                $sql = "SELECT * FROM products WHERE is_safe = 1";
+                $sql = "SELECT * FROM brand WHERE is_safe = 0 AND field = '$field'";
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     $brandName = $row["brand_name"];
@@ -42,7 +44,7 @@
         }
 
         ?>
-        <a href="index.html">Try another product</a>
+        <a href="../index.php">Try another product</a>
     </div>
 </body>
 
