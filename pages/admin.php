@@ -14,55 +14,28 @@
             <img src="palestine.jpg" class="img" alt="Image description">
         </a>
     </div>
-    <div class="supp">
-        <h2> Suprimer un produit</h2>
-        <label for="produit">Sélectionner un produit à supprimer :</label>
-        <select id="produit" name="produit">
-            <!-- Ajouter une option vide pour éviter de supprimer accidentellement un produit -->
-            <option value=""></option>
-            <?php
-            // Connexion à la base de données
-            $bdd = new PDO('mysql:host=localhost;dbname=nom_de_la_base_de_donnees;charset=utf8', 'nom_utilisateur', 'mot_de_passe');
-
-            // Récupération de tous les produits
-            $requete = $bdd->query('SELECT * FROM produits');
-            while ($donnees = $requete->fetch()) {
-                echo '<option value="' . $donnees['id'] . '">' . $donnees['nom'] . '</option>';
-            }
-            ?>
-        </select>
-
-        <!-- Ajouter un bouton "Supprimer" pour supprimer le produit sélectionné -->
-        <button onclick="supprimerProduit()">Supprimer</button>
-
-        <script>
-            function supprimerProduit() {
-                // Récupérer la valeur sélectionnée dans la liste déroulante
-                var produitSelectionne = document.getElementById("produit").value;
-
-                // Supprimer le produit correspondant de la base de données
-                // Code pour supprimer le produit ici
-
-                // Rafraîchir la page pour afficher les changements
-                location.reload();
-            }
-        </script>
-        <br><br>
-    </div>
     <div class="ajout">
 
-        <h2>Ajouter un produit</h2>
+        <h2>Add a brand:</h2>
         <!-- Ajouter deux choix pour le nouveau produit -->
-        <form action="ajouter_produit.php" method="post">
-            <label for="nom">Nom :</label>
-            <input type="text" id="nom" name="nom" required><br>
-            <label for="choix">Choisir une option :</label>
-            <select id="choix" name="choix">
-                <option value="option1">with</option>
-                <option value="option2">against</option>
-            </select>
+        <form action="../scripts/add_product.php" method="post">
+            <label for="nom">Name :</label>
+            <input type="text" id="nom" name="name" required>
             <br>
-            <input type="submit" value="Ajouter">
+            <input type="checkbox" name="is_safe" id="is-safe" value="This is safe.">
+            <br>
+            <h1>Choose the country:</h1>
+            <select id="country">
+
+                <?php
+                include_once("../scripts/countries.php");
+                foreach ($countries as $country) {
+                    $countryName = $country["name"]["common"];
+                    echo "<option value='$countryName'>$countryName</option>";
+                }
+                ?>
+            </select>
+            <input type="submit" value="Add">
         </form>
     </div>
 </body>

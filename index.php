@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Form</title>
+    <title>PalESSTine</title>
     <link rel="stylesheet" href="./styles/style.css">
     <?php include_once("./scripts/countries.php"); ?>
 </head>
@@ -11,6 +11,8 @@
     
     <div class="container">
         <h1>Enter the brand name:</h1>
+
+        <form action="./pages/respone.php" method="get"></form>
         <input type="text" id="mark" placeholder="Brand name">
 
         <h1>Choose your country:</h1>
